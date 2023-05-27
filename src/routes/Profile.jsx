@@ -3,8 +3,7 @@ import { FaEllipsisV, FaTrash, FaEdit, FaUserCircle} from "react-icons/fa";
 import { message } from "antd";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
-import { useNavigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Detail from "./Detail";
 // import { useHistory } from "react-router-dom";
 
@@ -62,6 +61,7 @@ function UserPost({ id, nama_umkm, profil_url }) {
   const [favorite, setFavorite] = useState(false);
   const [favoritesList, setFavoritesList] = useState([]);
   const navigate = useNavigate();
+  const { id: postId } = useParams();
   // const { id } = useParams();
 
   // const history = useHistory();
@@ -104,7 +104,11 @@ function UserPost({ id, nama_umkm, profil_url }) {
   };
   
   const handleEdit = () => {
-    navigate(`/profile`);
+    navigate(`/profile/edit/${id}`);
+  };
+
+  const navigateToDetail = () => {
+    navigate(`/profile/detail/${id}`);
   };
 
   return (
@@ -168,7 +172,7 @@ function UserPost({ id, nama_umkm, profil_url }) {
     <div className="flex justify-center"> 
       <button
         className="mt-4 mb-8 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-700"
-        onClick={toggleDetails}
+        onClick={navigateToDetail}
       >
         {showDetails ? "Hide Details" : "Details"}
       </button>
@@ -260,7 +264,7 @@ const Profile = () => {
         <div className="flex flex-col mt-8 md:flex-row md:space-x-4">
           {data.map((user) => (
             <div className="md:w-1/2" key={user.id}>
-              <UserPost nama_umkm={user.nama_umkm} profil_url={user.gambar_umkm} />
+              <UserPost id={user.id} nama_umkm={user.nama_umkm} profil_url={user.gambar_umkm} />
             </div>
           ))}
         </div>

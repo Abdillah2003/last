@@ -30,12 +30,13 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile">
           <Route index element={<Profile></Profile>}/>
-          <Route path='edit/:id' element={<Edit></Edit>}></Route>
+          <Route path='edit/:id' element={<Edit></Edit>}/>
+          <Route path="detail/:id" element={<Detail></Detail>}></Route>
         </Route>
         <Route path="/list">
           <Route index element={<List></List>} />
           <Route path="edit/:id" element={<Edit></Edit>} />
-          <Route path=':id' element={<Detail></Detail>}></Route>
+          <Route path="detail/:id" element={<Detail></Detail>}></Route>
         </Route>
         {/* <Route path='/detail' element={<Detail></Detail>}></Route> */}
         <Route path='/contact' element={<ContactUs></ContactUs>}></Route>

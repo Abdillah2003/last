@@ -28,18 +28,26 @@ const List = () => {
         'Content-Type': 'application/json'
       }
     })
-    .then(response => response.json())
-    .then(data => {
-      setData(data.data);
-      setLoading(false);
-    }).catch(error => {
-      console.log(error)
-      setLoading(false)
-    })
+      .then(response => response.json())
+      .then(data => {
+        setData(data.data);
+        setLoading(false);
+      }).catch(error => {
+        console.log(error)
+        setLoading(false)
+      })
   },[])
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
+  };
+
+  const handleDeleteCard = (id) => {
+    setData(prevData => prevData.filter(item => item.id !== id));
+  };
+
+  const handleEditCard = (id) => {
+    // Handle edit card logic
   };
 
   const filteredData = data.filter((item) => {
@@ -80,7 +88,13 @@ const List = () => {
             <SwiperSlide key={user.id}>
               <div className="user-image-container">
                 <div className="md:w-1/2">
-                  <UserPost id={user.id} nama_umkm={user.nama_umkm} profil_url={user.profil_url}/>
+                  <UserPost
+                    id={user.id}
+                    nama_umkm={user.nama_umkm}
+                    profil_url={user.profil_url}
+                    onDelete={handleDeleteCard}
+                    onEdit={handleEditCard}
+                  />
                 </div>
               </div>  
             </SwiperSlide>

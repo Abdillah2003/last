@@ -33,7 +33,7 @@ function UserPost({ id, nama_umkm, profil_url, onDelete }) {
     };
   
     const handleDetail = () => {
-      navigate(`/list/${id}`);
+      navigate(`/list/detail/${id}`);
     }
 
     const handleDelete = () => {

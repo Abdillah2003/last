@@ -13,7 +13,7 @@ function Gallery() {
     setToken(access_token)
     setLoading(true)
   
-    fetch("http://34.101.113.12/api/umkm", {
+    fetch("http://34.101.119.196/api/umkm", {
       method: "GET",
       headers: {
         'Authorization': `Bearer ${access_token}`,

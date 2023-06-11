@@ -48,12 +48,12 @@ function Register() {
     navigate('/login')// menggunakan fungsi navigate untuk pindah ke halaman Login
   };
   return(
-    <div class="bg-blue-900 text-gray-100 px-10 py-4 h-screen">
+    <div class="register">
       {/* {registrationStatus && <p>{registrationStatus}</p>} */}
-          <div class="text-center w-full">
+          <div className=' text-center w-full'>
           </div>
           <div 
-            class="max-w-screen-xl mt-4 px-4 grid gap-8 grid-cols-1 md:grid-cols-2 bg-slate-400 md:px-12 lg:px-16 xl:px-16 py-8 mx-auto text-gray-900 rounded-lg box shadow-2xl shadow-transparent">
+            class="sub-register">
             <div class="flex flex-col justify-between" >
               <div>
                 <div class="object-center">
@@ -62,8 +62,8 @@ function Register() {
                     <img src={Logo} alt="logo" className="logo"/>
                   </div>
                 </div>
-                    <h2 class= "text-2xl lg:text-2xl font-bold leading-tight text-center">UMKM Juara, UMKM Goes to Digital Marketing</h2>
-                    <div className="text-black mt-8 text-center text-xl font-mono">
+                    <h2 class= "text-xl lg:text-2xl font-bold leading-tight text-center">UMKM Juara,<br></br> UMKM Goes to Digital Marketing</h2>
+                    <div className="text-black mt-20 text-center text-xl font-mono">
                       You Have Acccount? <button className="text-blue-900 font-mono" onClick={handleLogin}>Log-in</button>
                     </div>
                 </div>
@@ -71,7 +71,7 @@ function Register() {
               <div class="mt-8 text-center">
               </div>
             </div>
-            <div className='input-register'>
+            <div className='input-register ml-5'>
               <form onSubmit={handleRegister}>
                 <h1 class=" appearance-none text-center font-bold text-4xl pb-8 pt-4 text-white font-sans" >Create Account</h1>
                   <div class=" items-center border-b border-black py-2 border-t">
@@ -81,7 +81,7 @@ function Register() {
                     <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} class="bg-transparent border-none w-96 text-gray-700 mr-3 py-2 px-2 focus:outline-none " placeholder="E-Mail" aria-label="E-Mail" />
                   </div>
                   <div class=" items-center border-b border-black py-2">
-                    <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} class=" bg-transparent border-none w-96 text-gray-700 mr-3 py-2 px-2  focus:outline-none" placeholder="Password" aria-label="Password" />    
+                    <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} class=" bg-transparent border-none w-80 text-gray-700 mr-3 py-2 px-2  focus:outline-none" placeholder="Password" aria-label="Password" />    
                   </div>
                   <div class=" items-center border-b border-black py-2">
                     <input type="text" value={number_phone} onChange={(e) => setNumberPhone(e.target.value)} class="bg-transparent border-none w-96 text-gray-700 mr-3 py-2 px-2 focus:outline-none " placeholder="Number Phone" aria-label="Number Phone" />            
@@ -90,7 +90,7 @@ function Register() {
                     <input type="text" value={alamat} onChange={(e) => setAlamat(e.target.value)} class=" bg-transparent border-none w-96 text-gray-700 mr-3 py-2 px-2 focus:outline-none "  placeholder="Adress" aria-label="Adress" />
                   </div>
                   <div class=" items-center border-b border-black py-2">
-                    <input type="text" value={gambar_profil} onChange={(e) => setProfil(e.target.value)} class=" bg-transparent border-none w-96 text-gray-700 mr-3 py-2 px-2 focus:outline-none "  placeholder="Url Profil" aria-label="Url Profil" />
+                    <input type="text" value={gambar_profil} onChange={(e) => setProfil(e.target.value)} class="" placeholder="Url Profil" aria-label="Url Profil" />
                   </div>
                 <div class="mt-8">
                   <button

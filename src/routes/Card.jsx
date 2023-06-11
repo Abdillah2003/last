@@ -39,7 +39,7 @@ function UserPost({ id, nama_umkm, profil_url, onDelete }) {
     const handleDelete = () => {
       const access_token = localStorage.getItem('token')
 
-      fetch(`http://34.101.113.12/api/umkm/${id}`, {
+      fetch(`http://34.101.119.196/api/umkm/${id}`, {
         method: "DELETE",
         headers: {
           'Authorization': `Bearer ${access_token}`,

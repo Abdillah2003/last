@@ -63,7 +63,7 @@ const Add = () => {
     };
     
     try {
-      const response = await fetch("http://34.101.113.12/api/umkm", {
+      const response = await fetch("http://34.101.119.196/api/umkm", {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${access_token}`,

@@ -49,8 +49,8 @@ function ProfileHeader({ nama_umkm, profil_url, alamat_umkm, handleEdit }) {
             </span>
           ))}
         </div>
-        <button className="bg-blue-500 w-28 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-8"
-          onClick={handleEdit}>Edit Profil</button>
+        {/* <button className="bg-blue-500 w-28 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-8"
+          onClick={handleEdit}>Edit Profil</button> */}
       </div>
     </div>
   );
@@ -86,7 +86,7 @@ function UserPost({ id, nama_umkm, profil_url }) {
     const access_token = localStorage.getItem('token');
     //const id = useParams(); // Tambahkan kode untuk mendapatkan nilai id yang valid
   
-    fetch(`http://34.101.113.12/api/umkm/${id}`, {
+    fetch(`http://34.101.119.196/api/umkm/${id}`, {
       method: "DELETE",
       headers: {
         'Authorization': `Bearer ${access_token}`,
@@ -174,7 +174,7 @@ function UserPost({ id, nama_umkm, profil_url }) {
         className="mt-4 mb-8 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-700"
         onClick={navigateToDetail}
       >
-        {showDetails ? "Hide Details" : "Details"}
+        {showDetails ? "Details" : "Details"}
       </button>
     </div>
     {showDetails && (
@@ -195,7 +195,7 @@ const Profile = () => {
   // fungsi untuk melakukan fetch data UMKM
   const fetchData = (id) => {
     setLoading(true)
-    fetch(`http://34.101.113.12/api/umkmByUser/${id}`, {
+    fetch(`http://34.101.119.196/api/umkmByUser/${id}`, {
       method: "GET",
       headers: {
         'Authorization': `Bearer ${access_token}`,
@@ -226,7 +226,7 @@ const Profile = () => {
     setLoading(true)
     const formData = new FormData(event.target)
 
-    fetch(`http://34.101.113.12/api/register`, {
+    fetch(`http://34.101.119.196/api/register`, {
       method: "POST",
       body: JSON.stringify(formData)
     })

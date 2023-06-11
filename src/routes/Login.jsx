@@ -13,7 +13,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    const response = await fetch('http://34.101.113.12/api/login', {
+    const response = await fetch('http://34.101.119.196/api/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

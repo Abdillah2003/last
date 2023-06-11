@@ -20,7 +20,7 @@ const Akun = (e) => {
       setToken(access_token)
       setLoading(true)
   
-      fetch("http://34.101.113.12/api/register", {
+      fetch("http://34.101.119.196/api/register", {
         method: "GET",
         headers: {
           'Authorization': `Bearer ${access_token}`,

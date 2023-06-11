@@ -13,7 +13,7 @@ function Detail() {
     setToken(access_token);
     setLoading(true);
 
-    fetch(`http://34.101.113.12/api/umkm/${id}`, {
+    fetch(`http://34.101.119.196/api/umkm/${id}`, {
       headers: { Authorization: `Bearer ${access_token}` },
     })
       .then((response) => response.json())

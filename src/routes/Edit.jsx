@@ -45,7 +45,7 @@ const Edit = () => {
       updatedAt: new Date()
     }
     
-    fetch(`http://34.101.113.12/api/umkm/${id}`, {
+    fetch(`http://34.101.119.196/api/umkm/${id}`, {
       method: "PUT",
       headers: {
         'Authorization': `Bearer ${access_token}`,
@@ -65,7 +65,7 @@ const Edit = () => {
   };
   useEffect(() => {
     setLoading(true);
-    fetch(`http://34.101.113.12/api/umkm/${id}`)
+    fetch(`http://34.101.119.196/api/umkm/${id}`)
     .then(hasil => {
       hasil.json()
       console.log(JSON.stringify(hasil))
